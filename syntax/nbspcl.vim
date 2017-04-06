@@ -53,8 +53,6 @@ syntax keyword pclConstant true false
 syntax match pclComment "\v#.*$"
 syntax match pclComment "/\*\_.\{-}\*/"
 
-syntax region pclBlock matchgroup=pclKeyword start="\<begin\>" end="\<end\>" transparent fold
-
 highlight link pclComment Comment
 highlight link pclKeyword Keyword
 highlight link pclPredefined Keyword
