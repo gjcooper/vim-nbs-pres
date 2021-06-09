@@ -47,6 +47,10 @@ syntax match sceOperator "\v\<\="
 syntax match sceOperator "\v\&\&"
 syntax match sceOperator "\v\|\|"
 
+syntax match sceConstant "\v<[0-9]+(\.[0-9]+)?(e[+-]?[0-9]+)?>"
+syntax region sceConstant start=/\v"/ skip=/\v\\./ end=/\v"/
+syntax keyword sceConstant true false
+
 syntax keyword sceKeyword IF ENDIF
 syntax keyword sceKeyword LOOP ENDLOOP
 syntax keyword sceKeyword EXPARAM
@@ -57,5 +61,6 @@ highlight link sceKeyword Keyword
 highlight link sceStimulusType Type
 highlight link sceFunction Function
 highlight link sceOperator Operator
+highlight link sceConstant Constant
 
 let b:current_syntax = "nbssce"
